@@ -23,7 +23,8 @@ static struct rule{
         {"/",'/'},
         {"-",'-'},
         {"\\+",'+'},
-        {"0x[0-9a-fA-F]+",TK_HEX}
+        {"0x[0-9a-fA-F]+",TK_HEX},
+        {"\\{(.*)\\}",TK_IMG_NUM}
 };
 #define NR_REGEX ARRLEN(rules)
 static regex_t re[NR_REGEX] = {};
@@ -91,6 +92,14 @@ bool make_token(char *e){
                         break;
                     case TK_NOTYPE:
                         break;
+                    case TK_IMG_NUM:
+                        tokens[nr_token].type = rules[i].token_type;
+                        for(j = 1;j<substr_len-1;j++){
+                            tokens[nr_token].str[j-1] = substr_start[j];
+                        }
+                        tokens[nr_token].str[substr_len-2] = '\0';
+                        nr_token++;
+                        break;
                 }
                 break;
             }
@@ -101,7 +110,7 @@ bool make_token(char *e){
         }
         isHex = false;
     }
-    for (int i = 0; i < nr_token; ++i) {
+    for (int i = 0; i < nr_token; ++i) {//heck conflict
         int cur_type = tokens[i].type;
         switch (cur_type) {
             case '-':
