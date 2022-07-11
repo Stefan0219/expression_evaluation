@@ -111,6 +111,7 @@ bool make_token(char *e){
         isHex = false;
     }
     for (int i = 0; i < nr_token; ++i) {//heck conflict
+        printf("%s ",tokens[i].str);
         int cur_type = tokens[i].type;
         switch (cur_type) {
             case '-':
