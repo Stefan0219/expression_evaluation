@@ -7,10 +7,14 @@
 
 #include <stdio.h>
 #include <string>
+
+typedef int oper;
 using namespace std;
+enum {REAL_NUM = 500,IMAG_NUM};
 class number{
 private:
 public:
+    int type;
     string literal;
      number(char *s){
         this->literal = s;
@@ -25,6 +29,7 @@ public:
     bool isHexnum;
     int value;
     real_number(char *s1) : number(s1) {
+        this->type = REAL_NUM;
         if(s1[0] == '0'&&s1[1]=='x'){
             sscanf(this->literal.c_str(),"%x",&this->value);
             this->isHexnum = true;
@@ -34,6 +39,7 @@ public:
         }
     }
     real_number(int v){
+        this->type = REAL_NUM;
         this->value = v;
     }
     void output(){
@@ -48,9 +54,11 @@ public:
     float realpart;
     float imaginarypart;
     imag_number(char* s1): number(s1){
+        this->type = IMAG_NUM;
 
     }
     imag_number(int real,int ima){
+        this->type = IMAG_NUM;
         this->realpart = real;
         this->imaginarypart = ima;
     }
@@ -61,4 +69,7 @@ public:
             printf("%.2f %.2fi\n",realpart,imaginarypart);
     }
 };
+
+number* operater(number*a,number *b,oper op);
+
 #endif //EXPR_NUMBER_H
