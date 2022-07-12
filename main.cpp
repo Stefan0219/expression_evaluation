@@ -1,7 +1,4 @@
-#include <iostream>
-#include "lexical_analysis.h"
-#include <cassert>
-#include "number.h"
+#include "util.h"
 using namespace std;
 int main() {
     //begin for testing lexical analysis && required TODO
@@ -14,12 +11,19 @@ int main() {
      */
     // end for testing lexical analysis
 
-    //begining for test number.cpp
+    //begin for testing number.cpp
     real_number a("12");
-    real_number b("0x124");
+    real_number b("6");
+
     imag_number c(1,3);
-    a.output();
-    b.output();
-    c.output();
-    //end for test number.cpp
+    imag_number d(2,4);
+    number * num ;
+    num = operater(&a,&b,'+');
+    cout<<"here ";
+    num->output();
+    //a.output();
+    //b.output();
+    //c.output();
+    //d.output();
+    //end for testing number.cpp
 }
