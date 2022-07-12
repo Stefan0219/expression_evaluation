@@ -5,7 +5,7 @@
 #ifndef EXPR_NUMBER_H
 #define EXPR_NUMBER_H
 
-#include <stdio.h>
+#include <cstdio>
 #include <string>
 
 typedef int oper;
@@ -16,13 +16,14 @@ private:
 public:
     int type;
     string literal;
-     number(char *s){
+    number(char *s){
         this->literal = s;
     }
-    number(){}
-    virtual void output(){
-
-     }
+    number() = default;
+    virtual void output(){}
+    int get_type(){
+        return this->type;
+    }
 };
 class real_number: public number{
 public:
