@@ -11,7 +11,5 @@
 #include <string.h>
 #include <cmath>
 #include <cstdlib>
-#include "number.h"
-#include "lexical_analysis.h"
 using namespace std;
 #endif //EXPR_UTIL_H

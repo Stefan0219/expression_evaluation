@@ -12,4 +12,8 @@ void init_regex();
 bool make_token(char *e);
 void move_tokens(int pos,int dir,int * nr_token);
 void reverse_sign(char * num);
+typedef struct Mytoken{
+    int type;
+    char str[32];
+} Token;
 #endif //EXPR_LEXICAL_ANALYSIS_H

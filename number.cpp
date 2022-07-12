@@ -3,7 +3,7 @@
 //
 
 #include "util.h"
-
+#include "number.h"
 number* operater(number*a,number *b,oper op){
     number *ret;
     if(a->get_type() ==REAL_NUM && b->get_type() == REAL_NUM){

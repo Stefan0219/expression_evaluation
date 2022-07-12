@@ -44,12 +44,8 @@ void init_regex(){
 
     }
 }
-typedef struct token{
-    int type;
-    char str[32];
-} Token;
-static Token tokens[32] __attribute__((used)) = {};
-static int nr_token __attribute__((used)) = 0;
+Token tokens[32] __attribute__((used)) = {};
+int nr_token __attribute__((used)) = 0;
 bool make_token(char *e){
     int position = 0;
     int i,j;
@@ -111,7 +107,7 @@ bool make_token(char *e){
         isHex = false;
     }
     for (int i = 0; i < nr_token; ++i) {//heck conflict
-        printf("%s ",tokens[i].str);
+        //printf("%s ",tokens[i].str);
         int cur_type = tokens[i].type;
         switch (cur_type) {
             case '-':

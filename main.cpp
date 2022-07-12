@@ -1,16 +1,20 @@
 #include "util.h"
+#include "lexical_analysis.h"
+#include "number.h"
+#include "syntatic_analysis.h"
 using namespace std;
 int main() {
     //begin for testing lexical analysis && required TODO
-    /*
+
     init_regex();
     bool make_token_success;
     char expression[200];
     scanf("%[^\n]",expression);
     assert(make_token_success = make_token(expression));
-     */
+    test();
     // end for testing lexical analysis
 
+    /*
     //begin for testing number.cpp
     real_number a("12");
     real_number b("6");
@@ -21,9 +25,10 @@ int main() {
     num = operater(&c,&d,'-');
     cout<<"here ";
     num->output();
-    //a.output();
-    //b.output();
-    //c.output();
-    //d.output();
-    //end for testing number.cpp
+    a.output();
+    b.output();
+    c.output();
+    d.output();
+    //end for testing number.cpp and DONE!
+    */
 }
