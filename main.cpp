@@ -18,7 +18,7 @@ int main() {
     imag_number c(1,3);
     imag_number d(2,4);
     number * num ;
-    num = operater(&a,&b,'+');
+    num = operater(&c,&d,'-');
     cout<<"here ";
     num->output();
     //a.output();

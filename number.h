@@ -21,7 +21,7 @@ public:
     double realpart;
     double imaginarypart;
     int type;
-    int value;
+    double value;
     string literal;
     number(char *s){
         this->literal = s;
@@ -49,11 +49,11 @@ public:
             sscanf(this->literal.c_str(),"%x",&this->value);
             this->isHexnum = true;
         } else{
-            sscanf(this->literal.c_str(),"%d",&this->value);
+            sscanf(this->literal.c_str(),"%lf",&this->value);
             this->isHexnum = false;
         }
     }
-    real_number(int v){
+    real_number(double v){
         this->type = REAL_NUM;
         this->value = v;
     }
@@ -61,7 +61,7 @@ public:
         if (isHexnum)
             printf("0x%x\n",value);
         else
-            printf("%d\n",value);
+            printf("%.2lf\n",value);
     }
 };
 class imag_number: public number{
