@@ -4,15 +4,23 @@
 #include "syntatic_analysis.h"
 using namespace std;
 int main() {
-    //begin for testing lexical analysis && required TODO
+    //begin for testing lexical analysis && required TODO a part of the final work
 
     init_regex();
     bool make_token_success;
     char expression[200];
     scanf("%[^\n]",expression);
     assert(make_token_success = make_token(expression));
-    test();
+    bool good;
     // end for testing lexical analysis
+
+    //begin for testing syntatic analysis  TODO a part of the final work
+    check_parentheses(0,nr_token-1,&good);
+    if(!good){
+        printf("Syntax error! Type again!\n");
+        assert(0);
+    }
+    //end for testing syntatic analysis
 
     /*
     //begin for testing number.cpp

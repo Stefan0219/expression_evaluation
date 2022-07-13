@@ -8,5 +8,6 @@
 void test();
 extern Token tokens[32];
 extern int nr_token;
+bool check_parentheses(int p ,int q ,bool* good_expr);
 
 #endif //EXPR_SYNTATIC_ANALYSIS_H
