@@ -26,7 +26,7 @@ number* operater(number*a,number *b,oper op){
                 ret = new imag_number(a->value+b->realpart,b->imaginarypart);
                 break;
             case '-':
-                ret = new imag_number(a->value-b->realpart,b->imaginarypart);
+                ret = new imag_number(a->value-b->realpart,-b->imaginarypart);
                 break;
             case '*':
                 ret = new imag_number(a->value*b->realpart,b->imaginarypart*a->value);

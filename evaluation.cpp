@@ -33,7 +33,7 @@ oper get_main_op(int p,int q,int *position){
                 if (ignore)
                     break;
                 cmp_val = op_pre_cmp(precedence,ADD_SUB);
-                printf("cmp_val = %d \n",cmp_val);
+                //printf("cmp_val = %d \n",cmp_val);
                 if(cmp_val< 0 && precedence != NO_MATCH){
                     break;
                 } else{
@@ -62,7 +62,7 @@ oper get_main_op(int p,int q,int *position){
         }
     }
     *position = op_pos;
-    printf("op's position at %d\n",*position);
+    //printf("op's position at %d\n",*position);
     return mainop;
 }
 int op_pre_cmp(oper oper1,oper oper2){// valued by the precedence of oper1 and oper2
@@ -95,6 +95,7 @@ number* eval(int p,int q){
         }
         return ret_val;
     } else if(check_parentheses(p,q,&good_expr)){
+        //this expression is surrounded by a pair of parentheses
         assert(good_expr);
         return eval(p+1,q-1);
     } else{
@@ -102,7 +103,8 @@ number* eval(int p,int q){
         number* val1,*val2;
         val1 = eval(p,position-1);
         val2 = eval(position+1,q);
-        switch (op) {
+        return operater(val1,val2,op);
+        /*switch (op) {
             case '+':
                 return operater(val1,val2,'+');
             case '-':
@@ -111,8 +113,10 @@ number* eval(int p,int q){
                 return operater(val1,val2,'*');
             case '/':
                 return operater(val1,val2,'/');
+            default:
+                assert(0);
 
-        }
+        }*/
     }
     return nullptr;
 }

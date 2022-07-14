@@ -43,7 +43,12 @@ public:
     real_number(char *s1) : number(s1) {
         this->type = REAL_NUM;
         if(s1[0] == '0'&&s1[1]=='x'){
-            sscanf(this->literal.c_str(),"%x",&this->value);
+            int temp;
+            //A bit ugly
+            //FIXME
+            sscanf(this->literal.c_str(),"%x",&temp);
+            string temp_str=to_string(temp);
+            sscanf(temp_str.c_str(),"%lf", &this->value);
             this->isHexnum = true;
         } else{
             sscanf(this->literal.c_str(),"%lf",&this->value);
@@ -55,8 +60,10 @@ public:
         this->value = v;
     }
     void output(){
-        if (isHexnum)
-            printf("0x%x\n",value);
+        if (isHexnum) {
+            cout << "This number is a Hexadecimal number " << this->literal << endl;
+            printf("And it's decimal value is %.0lf\n", value);
+        }
         else
             printf("%.2lf\n",value);
     }
@@ -74,7 +81,6 @@ public:
                temp[i] = '+';
                }
         }
-        cout<<"here "<<temp<<endl;
         sscanf(temp.c_str(),"%lf%lfi",&this->realpart, &this->imaginarypart);
         if(neg_imag){
             this->imaginarypart = -this->imaginarypart;
