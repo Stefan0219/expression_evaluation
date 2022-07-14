@@ -3,6 +3,7 @@
 //
 
 #include "evaluation.h"
+#include "syntatic_analysis.h"
 oper get_main_op(int p,int q,int *position){
     oper mainop = -1;//the latest operator which been calculated in current (sub)expression
     bool ignore = false;// the operators which are surround by () are not the mainop
@@ -74,5 +75,44 @@ int op_pre_cmp(oper oper1,oper oper2){// valued by the precedence of oper1 and o
     }
 }
 number* eval(int p,int q){
+    number* ret_val;
+    bool good_expr;
+    oper  op;
+    int position;
+    if(p>q){
+        printf("error in evaluation!\n");
+        assert(0);
+    } else if(p == q){
+        int type = tokens[p].type;
+        switch (type) {
+            case TK_NUM:
+            case TK_HEX:
+                ret_val = new real_number(tokens[p].str);
+                break;
+            case TK_IMG_NUM:
+                ret_val = new imag_number(tokens[p].str);
+                break;
+        }
+        return ret_val;
+    } else if(check_parentheses(p,q,&good_expr)){
+        assert(good_expr);
+        return eval(p+1,q-1);
+    } else{
+        op = get_main_op(p,q,&position);
+        number* val1,*val2;
+        val1 = eval(p,position-1);
+        val2 = eval(position+1,q);
+        switch (op) {
+            case '+':
+                return operater(val1,val2,'+');
+            case '-':
+                return operater(val1,val2,'-');
+            case '*':
+                return operater(val1,val2,'*');
+            case '/':
+                return operater(val1,val2,'/');
 
+        }
+    }
+    return nullptr;
 }
