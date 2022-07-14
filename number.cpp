@@ -2,7 +2,6 @@
 // Created by piggy on 7/11/22.
 //
 
-#include "util.h"
 #include "number.h"
 number* operater(number*a,number *b,oper op){
     number *ret;

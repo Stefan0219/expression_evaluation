@@ -1,15 +1,7 @@
 //
 // Created by piggy on 7/12/22.
 //
-#include "util.h"
 #include "syntatic_analysis.h"
-#include "lexical_analysis.h"
-/*void test(){
-    cout<<"number of tokens are: "<<nr_token<<" \n";
-    for (int i = 0; i < nr_token; ++i) {
-        cout<<tokens[i].str<<" ";
-    }
-}*/
 
 
 bool check_parentheses(int p ,int q ,bool *good_expr){
@@ -26,13 +18,6 @@ bool check_parentheses(int p ,int q ,bool *good_expr){
     }
     for(int i = p;i<=q;i++){
         switch (tokens[i].type){
-            /* case TK_NUM:
-             case '+':
-             case '-':
-             case '*':
-             case '/':
-                       break;//跳过非括号的部分
-                       */
             case '(':
                 num_par++;
                 meetbr = true;
@@ -44,6 +29,7 @@ bool check_parentheses(int p ,int q ,bool *good_expr){
             default :
                 break;
         }
+
         if(meetbr == true && num_par == 0 && i != q )//在未终止前就出现了和左括号数量相等的右括号
             too_early =true;
 
@@ -72,6 +58,6 @@ bool check_parentheses(int p ,int q ,bool *good_expr){
     else if(!*good_expr)
     printf("bad expressions.\n");
     //test----------------------------
-    return check;
      */
+    return check;
 }

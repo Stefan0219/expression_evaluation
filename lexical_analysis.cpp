@@ -3,13 +3,9 @@
 //
 
 #include "lexical_analysis.h"
-#include <cassert>
-#include <cstring>
 
 #define ARRLEN(arr) (int)(sizeof(arr)/sizeof(arr[0]))
-enum {
-    TK_NOTYPE = 256,TK_EQ,TK_NUM,TK_HEX,TK_IMG_NUM
-};
+using namespace T_P;
 enum {FORWARD,BACKWARD};
 static struct rule{
     const char *regex;
@@ -106,7 +102,7 @@ bool make_token(char *e){
         }
         isHex = false;
     }
-    for (int i = 0; i < nr_token; ++i) {//heck conflict
+    for (int i = 0; i < nr_token; ++i) {//check conflict
         //printf("%s ",tokens[i].str);
         int cur_type = tokens[i].type;
         switch (cur_type) {

@@ -5,11 +5,8 @@
 #ifndef EXPR_NUMBER_H
 #define EXPR_NUMBER_H
 
-#include <cstdio>
-#include <string>
-
+#include "util.h"
 typedef int oper;
-using namespace std;
 enum {REAL_NUM = 500,IMAG_NUM};
 
 
@@ -66,8 +63,26 @@ public:
 };
 class imag_number: public number{
 public:
+    void get_val_from_string(char*str){
+        int lenth = strlen(str);
+        string temp = str;
+        bool neg_imag = false;
+        int pos;
+        for (int i = 0; i < lenth; ++i) {
+           if(temp[i] == '-' && i != 0){
+               neg_imag = true;
+               temp[i] = '+';
+               }
+        }
+        cout<<"here "<<temp<<endl;
+        sscanf(temp.c_str(),"%lf%lfi",&this->realpart, &this->imaginarypart);
+        if(neg_imag){
+            this->imaginarypart = -this->imaginarypart;
+        }
+    }
     imag_number(char* s1): number(s1){
         this->type = IMAG_NUM;
+        get_val_from_string(s1);
         //TODO
     }
     imag_number(double real,double ima){
@@ -79,7 +94,7 @@ public:
         if(imaginarypart>=0)
             printf("%.2f + %.2fi\n",realpart,imaginarypart);
         else
-            printf("%.2f %.2fi\n",realpart,imaginarypart);
+            printf("%.2f - %.2fi\n",realpart,-imaginarypart);
     }
 };
 
