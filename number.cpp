@@ -32,7 +32,7 @@ number* operater(number*a,number *b,oper op){
                 ret = new imag_number(a->value*b->realpart,b->imaginarypart*a->value);
                 break;
             case '/':
-                //TOD
+                //TODO
                 double denominator = pow(b->imaginarypart,2)+pow(b->realpart,2);
                 double real_numer= a->value * b->realpart;
                 double imag_numer = -(a->value*b->imaginarypart);

@@ -20,7 +20,7 @@ static struct rule{
         {"-",'-'},
         {"\\+",'+'},
         {"0x[0-9a-fA-F]+",TK_HEX},
-        {"\\{(.*)\\}",TK_IMG_NUM}
+        {"\\{([^\\{\\}]*)\\}",TK_IMG_NUM}
 };
 #define NR_REGEX ARRLEN(rules)
 static regex_t re[NR_REGEX] = {};
@@ -103,7 +103,7 @@ bool make_token(char *e){
         isHex = false;
     }
     for (int i = 0; i < nr_token; ++i) {//check conflict
-        //printf("%s ",tokens[i].str);
+       // printf("%s ",tokens[i].str);
         int cur_type = tokens[i].type;
         switch (cur_type) {
             case '-':
