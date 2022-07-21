@@ -1,7 +1,7 @@
 //
 // Created by piggy on 7/12/22.
 //
-#include "../headers/syntatic_analysis.h"
+#include "../include/syntatic_analysis.h"
 
 
 bool check_parentheses(int p ,int q ,bool *good_expr){

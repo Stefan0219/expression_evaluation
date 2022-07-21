@@ -2,8 +2,8 @@
 // Created by piggy on 7/13/22.
 //
 
-#include "../headers/evaluation.h"
-#include "../headers/syntatic_analysis.h"
+#include "../include/evaluation.h"
+#include "../include/syntatic_analysis.h"
 oper get_main_op(int p,int q,int *position){
     oper mainop = -1;//the latest operator which been calculated in current (sub)expression
     bool ignore = false;// the operators which are surround by () are not the mainop

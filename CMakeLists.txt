@@ -3,4 +3,4 @@ project(expr)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(expr main.cpp src/lexical_analysis.cpp headers/lexical_analysis.h src/number.cpp headers/number.h headers/util.h src/syntatic_analysis.cpp headers/syntatic_analysis.h src/evaluation.cpp headers/evaluation.h)
+add_executable(expr main.cpp src/lexical_analysis.cpp include/lexical_analysis.h src/number.cpp include/number.h include/util.h src/syntatic_analysis.cpp include/syntatic_analysis.h src/evaluation.cpp include/evaluation.h)
