@@ -55,29 +55,29 @@ build CMakeFiles/expr.dir/main.cpp.o: CXX_COMPILER__expr_Debug /home/piggy/codes
   OBJECT_DIR = CMakeFiles/expr.dir
   OBJECT_FILE_DIR = CMakeFiles/expr.dir
 
-build CMakeFiles/expr.dir/lexical_analysis.cpp.o: CXX_COMPILER__expr_Debug /home/piggy/codes/C/expr/lexical_analysis.cpp || cmake_object_order_depends_target_expr
-  DEP_FILE = CMakeFiles/expr.dir/lexical_analysis.cpp.o.d
+build CMakeFiles/expr.dir/src/lexical_analysis.cpp.o: CXX_COMPILER__expr_Debug /home/piggy/codes/C/expr/src/lexical_analysis.cpp || cmake_object_order_depends_target_expr
+  DEP_FILE = CMakeFiles/expr.dir/src/lexical_analysis.cpp.o.d
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/expr.dir
-  OBJECT_FILE_DIR = CMakeFiles/expr.dir
+  OBJECT_FILE_DIR = CMakeFiles/expr.dir/src
 
-build CMakeFiles/expr.dir/number.cpp.o: CXX_COMPILER__expr_Debug /home/piggy/codes/C/expr/number.cpp || cmake_object_order_depends_target_expr
-  DEP_FILE = CMakeFiles/expr.dir/number.cpp.o.d
+build CMakeFiles/expr.dir/src/number.cpp.o: CXX_COMPILER__expr_Debug /home/piggy/codes/C/expr/src/number.cpp || cmake_object_order_depends_target_expr
+  DEP_FILE = CMakeFiles/expr.dir/src/number.cpp.o.d
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/expr.dir
-  OBJECT_FILE_DIR = CMakeFiles/expr.dir
+  OBJECT_FILE_DIR = CMakeFiles/expr.dir/src
 
-build CMakeFiles/expr.dir/syntatic_analysis.cpp.o: CXX_COMPILER__expr_Debug /home/piggy/codes/C/expr/syntatic_analysis.cpp || cmake_object_order_depends_target_expr
-  DEP_FILE = CMakeFiles/expr.dir/syntatic_analysis.cpp.o.d
+build CMakeFiles/expr.dir/src/syntatic_analysis.cpp.o: CXX_COMPILER__expr_Debug /home/piggy/codes/C/expr/src/syntatic_analysis.cpp || cmake_object_order_depends_target_expr
+  DEP_FILE = CMakeFiles/expr.dir/src/syntatic_analysis.cpp.o.d
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/expr.dir
-  OBJECT_FILE_DIR = CMakeFiles/expr.dir
+  OBJECT_FILE_DIR = CMakeFiles/expr.dir/src
 
-build CMakeFiles/expr.dir/evaluation.cpp.o: CXX_COMPILER__expr_Debug /home/piggy/codes/C/expr/evaluation.cpp || cmake_object_order_depends_target_expr
-  DEP_FILE = CMakeFiles/expr.dir/evaluation.cpp.o.d
+build CMakeFiles/expr.dir/src/evaluation.cpp.o: CXX_COMPILER__expr_Debug /home/piggy/codes/C/expr/src/evaluation.cpp || cmake_object_order_depends_target_expr
+  DEP_FILE = CMakeFiles/expr.dir/src/evaluation.cpp.o.d
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/expr.dir
-  OBJECT_FILE_DIR = CMakeFiles/expr.dir
+  OBJECT_FILE_DIR = CMakeFiles/expr.dir/src
 
 
 # =============================================================================
@@ -87,7 +87,7 @@ build CMakeFiles/expr.dir/evaluation.cpp.o: CXX_COMPILER__expr_Debug /home/piggy
 #############################################
 # Link the executable expr
 
-build expr: CXX_EXECUTABLE_LINKER__expr_Debug CMakeFiles/expr.dir/main.cpp.o CMakeFiles/expr.dir/lexical_analysis.cpp.o CMakeFiles/expr.dir/number.cpp.o CMakeFiles/expr.dir/syntatic_analysis.cpp.o CMakeFiles/expr.dir/evaluation.cpp.o
+build expr: CXX_EXECUTABLE_LINKER__expr_Debug CMakeFiles/expr.dir/main.cpp.o CMakeFiles/expr.dir/src/lexical_analysis.cpp.o CMakeFiles/expr.dir/src/number.cpp.o CMakeFiles/expr.dir/src/syntatic_analysis.cpp.o CMakeFiles/expr.dir/src/evaluation.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/expr.dir
   POST_BUILD = :

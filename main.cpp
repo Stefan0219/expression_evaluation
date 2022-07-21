@@ -1,6 +1,6 @@
-#include "lexical_analysis.h"
-#include "number.h"
-#include "evaluation.h"
+#include "headers/lexical_analysis.h"
+#include "headers/number.h"
+#include "headers/evaluation.h"
 int main() {
 /*
  Notes:
@@ -11,13 +11,18 @@ int main() {
        If there is any problem in running my program, please email me at tpq0219@qq.com.
        Best wishes.
 */
+
     //begin for testing lexical analysis && part of the final work
     init_regex();
     char expression[200];
+    printf("Input the expression you wanna evaluate:\n");
     scanf("%[^\n]",expression);
     assert(make_token(expression));
-    number * value_of_expr = eval(0,nr_token-1);
     // end for testing lexical analysis
+
+
+    number * value_of_expr = eval(0,nr_token-1);
+    printf("The value of the expression is:\n");
     value_of_expr->output();
 
     //begin for testing syntatic analysis
@@ -35,13 +40,12 @@ int main() {
     real_number a("12");
     //real_number b("6");
     imag_number c("1+1i");
-    imag_number d("1-2i");
+    //imag_number d("1-2i");
     number * num ;
-    a.output();
-    num = operater(&c,&a,'*');
+    num = operater(&a,&c,'/');
     num->output();
-    c.output();
-    d.output();
+    //c.output();
+    //d.output();
     */
     //end for testing number.cpp && done!
 

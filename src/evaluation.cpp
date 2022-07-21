@@ -2,8 +2,8 @@
 // Created by piggy on 7/13/22.
 //
 
-#include "evaluation.h"
-#include "syntatic_analysis.h"
+#include "../headers/evaluation.h"
+#include "../headers/syntatic_analysis.h"
 oper get_main_op(int p,int q,int *position){
     oper mainop = -1;//the latest operator which been calculated in current (sub)expression
     bool ignore = false;// the operators which are surround by () are not the mainop
@@ -81,6 +81,7 @@ number* eval(int p,int q){
     int position;
     if(p>q){
         printf("error in evaluation!\n");
+        printf("And Error's position is at %d\n",p);
         assert(0);
     } else if(p == q){
         int type = tokens[p].type;
@@ -103,8 +104,8 @@ number* eval(int p,int q){
         number* val1,*val2;
         val1 = eval(p,position-1);
         val2 = eval(position+1,q);
-        return operater(val1,val2,op);
-        /*switch (op) {
+       // return operater(val1,val2,op);
+        switch (op) {
             case '+':
                 return operater(val1,val2,'+');
             case '-':
@@ -112,11 +113,12 @@ number* eval(int p,int q){
             case '*':
                 return operater(val1,val2,'*');
             case '/':
+                assert(!(val2->get_type() == REAL_NUM && val2->get_value() == 0));
                 return operater(val1,val2,'/');
             default:
                 assert(0);
 
-        }*/
+        }
     }
     return nullptr;
 }

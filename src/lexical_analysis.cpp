@@ -2,7 +2,7 @@
 // Created by piggy on 7/11/22.
 //
 
-#include "lexical_analysis.h"
+#include "../headers/lexical_analysis.h"
 
 #define ARRLEN(arr) (int)(sizeof(arr)/sizeof(arr[0]))
 using namespace T_P;
@@ -20,7 +20,7 @@ static struct rule{
         {"-",'-'},
         {"\\+",'+'},
         {"0x[0-9a-fA-F]+",TK_HEX},
-        {"\\{([^\\{\\}]*)\\}",TK_IMG_NUM}
+        {R"(\{([^\{\}]*)\})",TK_IMG_NUM}
 };
 #define NR_REGEX ARRLEN(rules)
 static regex_t re[NR_REGEX] = {};
@@ -103,7 +103,7 @@ bool make_token(char *e){
         isHex = false;
     }
     for (int i = 0; i < nr_token; ++i) {//check conflict
-       // printf("%s ",tokens[i].str);
+        //printf("The %d(/st/rd/th)'s token is %s \n",i,tokens[i].str);
         int cur_type = tokens[i].type;
         switch (cur_type) {
             case '-':
