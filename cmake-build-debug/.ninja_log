@@ -25,3 +25,9 @@
 1	961	1658449215613097662	CMakeFiles/expr.dir/src/number.cpp.o	7268aa37c34c4411
 1	966	1658449215617098760	CMakeFiles/expr.dir/src/evaluation.cpp.o	f3c757ffae75448
 966	1068	1658449215725128414	expr	c643e2273d485908
+1	334	1658456890988857718	CMakeFiles/expr.dir/src/syntatic_analysis.cpp.o	e66d56265f8e9ec4
+0	339	1658456890992857764	CMakeFiles/expr.dir/main.cpp.o	dce0cd39b26c7be8
+1	353	1658456891004857901	CMakeFiles/expr.dir/src/number.cpp.o	7268aa37c34c4411
+0	361	1658456891012857992	CMakeFiles/expr.dir/src/lexical_analysis.cpp.o	7e72eeed46060b21
+2	382	1658456891036858266	CMakeFiles/expr.dir/src/evaluation.cpp.o	f3c757ffae75448
+382	461	1658456891112859133	expr	c643e2273d485908
