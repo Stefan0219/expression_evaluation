@@ -2,7 +2,7 @@
 // Created by piggy on 7/11/22.
 //
 
-#include "../include/lexical_analysis.h"
+#include <lexical_analysis.h>
 
 #define ARRLEN(arr) (int)(sizeof(arr)/sizeof(arr[0]))
 using namespace T_P;

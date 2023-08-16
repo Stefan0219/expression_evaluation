@@ -4,8 +4,8 @@
 
 #ifndef EXPR_EVALUATION_H
 #define EXPR_EVALUATION_H
-#include "lexical_analysis.h"
-#include "number.h"
+#include <lexical_analysis.h>
+#include <number.h>
 using namespace T_P;
 extern Token tokens[32];
 extern int nr_token;

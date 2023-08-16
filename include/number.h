@@ -5,7 +5,7 @@
 #ifndef EXPR_NUMBER_H
 #define EXPR_NUMBER_H
 
-#include "util.h"
+#include <my_util.h>
 typedef int oper;
 enum {REAL_NUM = 500,IMAG_NUM};
 
@@ -74,7 +74,7 @@ public:
         int lenth = strlen(str);
         string temp = str;
         bool neg_imag = false;
-        int pos;
+        //int pos;
         for (int i = 0; i < lenth; ++i) {
            if(temp[i] == '-' && i != 0){
                neg_imag = true;

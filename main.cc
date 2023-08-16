@@ -1,6 +1,6 @@
-#include "include/lexical_analysis.h"
-#include "include/number.h"
-#include "include/evaluation.h"
+#include <lexical_analysis.h>
+#include <number.h>
+#include <evaluation.h>
 int main() {
     init_regex();
     char expression[200];

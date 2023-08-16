@@ -5,7 +5,7 @@
 #ifndef EXPR_LEXICAL_ANALYSIS_H
 #define EXPR_LEXICAL_ANALYSIS_H
 #include <regex.h>
-#include "util.h"
+#include <my_util.h>
 using namespace std;
 void init_regex();
 bool make_token(char *e);
